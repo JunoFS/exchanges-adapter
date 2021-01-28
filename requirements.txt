@@ -1,0 +1,6 @@
+python-binance==0.7.5
+pytest==6.2.1
+PyNaCl==1.4.0
+python-dotenv==0.15.0
+python-bittrex==0.3.0
+kucoin-python==1.0.5
