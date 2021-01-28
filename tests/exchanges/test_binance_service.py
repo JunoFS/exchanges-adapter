@@ -1,7 +1,12 @@
+from exchanges.binance.service import BinanceService
 import unittest
 import logging
+from dotenv import load_dotenv
 
-from exchanges.binance.service import BinanceService
+from os import environ
+
+load_dotenv()
+
 
 logger = logging.getLogger(__name__)
 
@@ -9,8 +14,8 @@ logger = logging.getLogger(__name__)
 class TestBinanceService(unittest.TestCase):
 
     def setUp(self):
-        self.service = BinanceService(api_key="gp6OYPQ9JKftPyTVV3t2yEfNoTzW45LqRHxrqYbCNwuy9vDvb64gcvoT9DMpH5jp",
-                                      api_secret="R4U4JIbdszY8UWFTA4h8MMZuXObDlHRC2SidfkcDLabLfOQdxOdmxblqe25A6it4")
+        self.service = BinanceService(api_key=environ.get("BINANCE_API_KEY"),
+                                      api_secret=environ.get("BINANCE_API_SECRET"))
         return super().setUp()
 
     def test_buy(self):
@@ -45,6 +50,7 @@ class TestBinanceService(unittest.TestCase):
         orders = self.service.get_all_orders(coin_name)
         logger.debug(f"orders: {orders}")
         self.assertIsNotNone(orders)
+
 
 if __name__ == '__main__':
     unittest.main()
