@@ -9,6 +9,16 @@ The aim of this is to help developers and crypto enthuasists easily get started 
 - Kucoin
 - Uniswap (coming soon)
 
+## How to install
+
+Requires **Python3.7** and above.
+
+    python3 -m venv venv
+    source venv/bin/activate
+    
+    python3.7 -m pip install --upgrade pip
+    python3.7 -m pip install -r requirements.txt
+
 ## Design - Write implementation once and deploy across exchages
 
 Example:
@@ -103,3 +113,7 @@ For exchanges, the following services are provided.
         @abstractmethod
         def calculate_buy_qty(self, **kwargs):
             pass
+
+## How to run unit tests
+
+    pytest
