@@ -66,7 +66,6 @@ class BinaceWebsocket:
             self.close()
 
     def close(self):
-        time.sleep(3)
         logger.info(f"Closing connection key: {self.conn_key}")
         self.bm.stop_socket(self.conn_key)
         self.bm.close()
