@@ -32,15 +32,15 @@ class Exchange():
         self.set_adapter(**kwargs)
 
     def set_adapter(self, **kwargs):
-        if self.name == 'bin':
+        if self.name == 'binance':
             self.provider = BinanceService(**kwargs)
             scope = ExchangeAdapter(self.provider)
             return scope
-        if self.name == 'bit':
+        if self.name == 'bittrex':
             self.provider = BittrexService(**kwargs)
             scope = ExchangeAdapter(self.provider)
             return scope
-        if self.name == 'ku':
+        if self.name == 'kucoin':
             self.provider = KucoinService(**kwargs)
             scope = ExchangeAdapter(self.provider)
             return scope

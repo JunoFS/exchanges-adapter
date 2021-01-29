@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 
 class BinanceService(ServiceInterface):
-    name = 'bin'
+    name = 'binance'
 
     def __init__(self, **kwargs):
         api_key = kwargs["api_key"]
